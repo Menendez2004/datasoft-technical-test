@@ -1,0 +1,28 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: pruebadatasoft-postgres
+    environment:
+      POSTGRES_DB: pruebadatasoft
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - ./init-scripts:/docker-entrypoint-initdb.d
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d pruebadatasoft"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  pgadmin:
+    image: dpage/pgadmin4:latest
+    container_name: pruebadatasoft-pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: admin@admin.com
+      PGADMIN_DEFAULT_PASSWORD: admin
+    ports:
+      - "8080:80"
+    depends_on:
+      - postgres
