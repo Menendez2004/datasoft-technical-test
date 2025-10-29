@@ -142,7 +142,7 @@ spring:
   
   security:
     jwt:
-      secret: mySecretKey123456789012345678901234567890123456789012345678901234567890
+      secret: my_secret_key
       expiration: 86400000
 
 server:
