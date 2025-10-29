@@ -1,0 +1,228 @@
+{
+	"info": {
+		"_postman_id": "f17dbdc3-f9c5-4888-b00e-aa50feb8fa04",
+		"name": "dataSoft",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "20768484"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"kevin123\",\n  \"password\": \"pas12345\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BaseUrl}}api/auth/login"
+					},
+					"response": []
+				},
+				{
+					"name": "SignUp",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"fullName\": \"Kevin Menenedez\",\n  \"username\": \"kevin1123\",\n  \"password\": \"pas12345\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BaseUrl}}api/auth/signup"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "genres",
+			"item": [
+				{
+					"name": "Genres",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{BaseUrl}}api/genres"
+					},
+					"response": []
+				},
+				{
+					"name": "Genres/:id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}api/genres/:id",
+							"host": [
+								"{{BaseUrl}}api"
+							],
+							"path": [
+								"genres",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2ebc81b5-c984-4965-aacf-2066ce4693b6"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "books",
+			"item": [
+				{
+					"name": "/books",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "{{BaseUrl}}api/books"
+					},
+					"response": []
+				},
+				{
+					"name": "/books/genre/:id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}api/books/genre/:id",
+							"host": [
+								"{{BaseUrl}}api"
+							],
+							"path": [
+								"books",
+								"genre",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "64a46803-ed6a-4a95-aac5-b998e2867756"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/books/:id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{BaseUrl}}api/books/:id",
+							"host": [
+								"{{BaseUrl}}api"
+							],
+							"path": [
+								"books",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "caf3437f-d1a9-4058-b4e4-8e50047fbcf0"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "/books/:id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "{{token}}"
+							}
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"El Quijote - Edición Actualizada\",\n  \"summary\": \"Nueva edición con notas explicativas\",\n  \"price\": 22.45,\n  \"state\": \"SOLD\",\n  \"image\": \"/images/quijote-v3.jpg\",\n  \"genreId\": \"64a46803-ed6a-4a95-aac5-b998e2867756\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{BaseUrl}}api/books/:id",
+							"host": [
+								"{{BaseUrl}}api"
+							],
+							"path": [
+								"books",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "caf3437f-d1a9-4058-b4e4-8e50047fbcf0"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "New Folder",
+			"item": []
+		}
+	]
+}

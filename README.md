@@ -2,7 +2,8 @@
 
 API REST desarrollada con Java Spring Boot para prueba dataSoft
 
-## 🚀 Configuración Rápida
+## 🚀 Postman collection
+https://lunar-spaceship-978795.postman.co/workspace/dataSoft~a1a77b3d-e21f-4bbd-a629-49032e9af483/collection/20768484-f17dbdc3-f9c5-4888-b00e-aa50feb8fa04?action=share&creator=20768484&active-environment=20768484-add81f19-ebed-4559-8639-7817c23b3763
 
 
 ### Opción 2: Configuración Manual
